@@ -1,5 +1,6 @@
 import express from 'express';
 import Task from './tasksModel';
+import asyncHandler from 'express-async-handler';
 
 const router = express.Router(); // eslint-disable-line
 
@@ -8,7 +9,6 @@ const router = express.Router(); // eslint-disable-line
 
 
 router.get('/', async (req, res) => {
-
     const tasks = await Task.find();
     res.status(200).json(tasks);
 });
