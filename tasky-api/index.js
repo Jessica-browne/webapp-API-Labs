@@ -6,6 +6,8 @@ import './db';
 
 dotenv.config();
 
+//
+
 const app = express();
 
 const port = process.env.PORT;
@@ -13,6 +15,8 @@ const port = process.env.PORT;
 app.use(express.json());
 
 app.use('/api/tasks', tasksRouter);
+
+//app.use(errHandler);
 
 app.listen(port, () => {
   console.info(`Server running at ${port}`);
